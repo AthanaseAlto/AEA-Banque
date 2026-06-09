@@ -33,11 +33,11 @@ class Banque:
         print(f"ID client : {client.num_clt}")
         print(f"ID compte : {compte.num_compte}")
 
-    def trouver_compte(self, num_compte):
+    def trouver_compte(self, num_client):
 
         for compte in self.comptes:
 
-            if compte.num_compte == num_compte:
+            if compte.client.num_clt == num_client:
                 return compte
 
         return None
