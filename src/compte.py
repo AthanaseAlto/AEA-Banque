@@ -3,6 +3,9 @@ class Compte:
         self.client = client
         self.solde = solde_initial
 
+    def consulter_solde(self):
+        return self.solde
+
     def deposer(self, montant):
         if montant > 0:
             self.solde += montant
