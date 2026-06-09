@@ -6,7 +6,7 @@ class Compte:
     def deposer(self, montant):
         if montant > 0:
             self.solde += montant
-            print(f"Dépôt de {montant} FCFA effectué.")
+            print(f"Depot de {montant} FCFA effectue.")
         else:
             print("Montant invalide.")
 
@@ -17,11 +17,11 @@ class Compte:
             print("Solde insuffisant.")
         else:
             self.solde -= montant
-            print(f"Retrait de {montant} FCFA effectué.")
+            print(f"Retrait de {montant} FCFA effectue.")
 
     def __str__(self):
         return (
             f"\n=== COMPTE BANCAIRE ===\n"
-            f"Client : {self.client}\n"
+            f"Client : {self.client.nom} {self.client.prenom}\n"
             f"Solde : {self.solde} FCFA"
         )
