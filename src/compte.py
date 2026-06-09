@@ -1,5 +1,5 @@
 class Compte:
-    def init(self, client, solde_initial=0):
+    def __init__(self, client, solde_initial=0):
         self.client = client
         self.solde = solde_initial
 
@@ -19,7 +19,7 @@ class Compte:
             self.solde -= montant
             print(f"Retrait de {montant} FCFA effectué.")
 
-    def str(self):
+    def __str__(self):
         return (
             f"\n=== COMPTE BANCAIRE ===\n"
             f"Client : {self.client}\n"
