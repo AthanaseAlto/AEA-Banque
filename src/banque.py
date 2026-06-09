@@ -13,6 +13,7 @@ class Banque:
         prenom,
         age,
         localisation,
+        email,
         pwd
     ):
 
@@ -21,6 +22,7 @@ class Banque:
             prenom,
             age,
             localisation,
+            email,
             pwd
         )
 
@@ -31,7 +33,6 @@ class Banque:
         print("Compte cree avec succes.")
         print(f"Bienvenue {client.prenom} {client.nom}")
         print(f"ID client : {client.num_clt}")
-        print(f"ID compte : {compte.num_compte}")
 
     def trouver_compte(self, num_client):
 
@@ -74,6 +75,14 @@ class Banque:
 
         print(f"Transfert de {montant} Fcfa effectue avec succes")
 
+    def rechercher_email(self, email):
+
+        for compte in self.comptes:
+
+            if compte.client.email == email:
+                return compte
+
+        return None
     def afficher_tous_les_comptes(self):
 
         if len(self.comptes) == 0:
