@@ -14,7 +14,8 @@ class Banque:
         age,
         localisation,
         email,
-        pwd
+        pwd,
+        solde_initial
     ):
 
         client = Client(
@@ -26,7 +27,7 @@ class Banque:
             pwd
         )
 
-        compte = Compte(client)
+        compte = Compte(client,solde_initial)
 
         self.comptes.append(compte)
 
@@ -50,7 +51,8 @@ class Banque:
         montant,
         pwd
     ):
-
+        print("Source:", num_source)
+        print("Destination:", num_destination)
         source = self.trouver_compte(num_source)
         destination = self.trouver_compte(num_destination)
 
@@ -91,4 +93,7 @@ class Banque:
 
         print("\n===== LISTE DES COMPTES =====")
         for compte in self.comptes:
-            print(compte)
+            f"{compte.client.num_clt} - "
+            f"{compte.client.nom} "
+            f"{compte.client.prenom} - "
+            f"{compte.solde} FCFA"
