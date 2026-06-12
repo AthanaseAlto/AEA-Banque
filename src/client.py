@@ -1,10 +1,11 @@
 class Client:
     compteur_clt = 1
-    def __init__(self,nom, prenom, age, localisation, pwd):
+    def __init__(self,nom, prenom, age, localisation,email, pwd):
         self.nom = nom
         self.prenom = prenom
         self.age = age
         self.localisation = localisation
+        self.email= email
         self.pwd = pwd
         self.num_clt = f"CLT{Client.compteur_clt}"
         Client.compteur_clt += 1
